@@ -1,0 +1,29 @@
+{
+  "nav.dashboard": "لوحة التحكم",
+  "nav.ai": "تحليل الذكاء الاصطناعي",
+  "nav.wallet": "المحفظة",
+  "nav.performance": "الأداء",
+  "nav.risk": "إدارة المخاطر",
+  "nav.alerts": "التنبيهات",
+  "nav.lab": "المختبر",
+  "nav.news": "الأخبار",
+  "nav.calendar": "الأجندة",
+  "nav.settings": "الإعدادات",
+
+  "markets.title": "الأسواق",
+  "markets.forex": "فوركس",
+  "markets.metals": "معادن",
+  "markets.crypto": "كريبتو",
+  "markets.indices": "مؤشرات",
+
+  "chart.title": "الشارت",
+  "chart.open": "افتتاح",
+  "chart.high": "أعلى",
+  "chart.low": "أدنى",
+  "chart.volume": "الفوليوم",
+
+  "orders.title": "الصفقات المفتوحة",
+  "signals.title": "إشارات الذكاء الاصطناعي",
+
+  "news.title": "الأخبار"
+}

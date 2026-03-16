@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>NEXUS TRADE v3 — Cyberpunk Terminal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+
+  <!-- TradingView Lightweight Charts -->
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- NEWS TICKER -->
+  <div id="ticker"></div>
+
+  <!-- MAIN LAYOUT -->
+  <main class="layout">
+
+    <!-- MARKETS PANEL -->
+    <section id="markets" class="panel"></section>
+
+    <!-- CHART PANEL -->
+    <section id="chart" class="panel"></section>
+
+    <!-- RIGHT PANEL (ORDERS + SIGNALS) -->
+    <section id="right-panel">
+      <div id="orders" class="panel"></div>
+      <div id="signals" class="panel"></div>
+    </section>
+
+  </main>
+
+  <!-- NEWS SECTION -->
+  <section id="news" class="panel"></section>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+</body>
+</html>

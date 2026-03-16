@@ -1,0 +1,29 @@
+{
+  "nav.dashboard": "Dashboard",
+  "nav.ai": "AI Analysis",
+  "nav.wallet": "Wallet",
+  "nav.performance": "Performance",
+  "nav.risk": "Risk Management",
+  "nav.alerts": "Alerts",
+  "nav.lab": "Lab",
+  "nav.news": "News",
+  "nav.calendar": "Calendar",
+  "nav.settings": "Settings",
+
+  "markets.title": "Markets",
+  "markets.forex": "Forex",
+  "markets.metals": "Metals",
+  "markets.crypto": "Crypto",
+  "markets.indices": "Indices",
+
+  "chart.title": "Chart",
+  "chart.open": "Open",
+  "chart.high": "High",
+  "chart.low": "Low",
+  "chart.volume": "Volume",
+
+  "orders.title": "Open Positions",
+  "signals.title": "AI Signals",
+
+  "news.title": "News"
+}
