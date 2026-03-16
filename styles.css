@@ -1,1 +1,326 @@
-DirectoryIndex index.html
+/* ============================
+   NEXUS TRADE v3 — Cyberpunk Purple/Magenta — Glow G‑Mid
+   File: styles.css
+============================ */
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-main: #05000b;
+  --bg-panel: #0b0016;
+  --bg-panel-alt: #120020;
+  --border-glow: rgba(255, 0, 255, 0.45);
+  --border-soft: rgba(255, 0, 255, 0.18);
+  --accent-magenta: #ff4df0;
+  --accent-purple: #7a00ff;
+  --accent-cyan: #35e0ff;
+  --text-main: #f5e9ff;
+  --text-soft: #b9a4ff;
+  --text-muted: #6f5a9c;
+  --danger: #ff3366;
+  --success: #3dff9c;
+  --shadow-glow: 0 0 22px rgba(255, 0, 255, 0.45);
+  --radius-panel: 14px;
+  --radius-pill: 999px;
+  --transition-fast: 0.18s ease-out;
+  --transition-med: 0.28s ease-out;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top, #1a0033 0, #05000b 45%, #020008 100%);
+  color: var(--text-main);
+  font-family: var(--font-main);
+}
+
+/* ---------- Layout ---------- */
+
+body {
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1.6fr) 320px;
+  grid-template-rows: minmax(0, 420px);
+  gap: 10px;
+}
+
+/* ---------- Panels ---------- */
+
+.panel {
+  background: radial-gradient(circle at top left, #22003f 0, var(--bg-panel) 40%, #05000b 100%);
+  border-radius: var(--radius-panel);
+  border: 1px solid var(--border-soft);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.02),
+    0 0 18px rgba(0, 0, 0, 0.9),
+    0 0 26px rgba(255, 0, 255, 0.35);
+  padding: 10px 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle inner glow line */
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+}
+
+/* ---------- Header ---------- */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: linear-gradient(120deg, #160028, #0b0016 55%, #160028);
+}
+
+.header .logo {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--accent-magenta);
+  text-shadow:
+    0 0 10px rgba(255, 77, 240, 0.9),
+    0 0 18px rgba(122, 0, 255, 0.9);
+}
+
+.header nav {
+  display: flex;
+  gap: 10px;
+  font-size: 11px;
+}
+
+.header nav span {
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  background: radial-gradient(circle at top, rgba(255, 77, 240, 0.12), transparent 60%);
+}
+
+.header nav span:hover {
+  border-color: rgba(255, 77, 240, 0.7);
+  color: var(--accent-magenta);
+  box-shadow: 0 0 14px rgba(255, 0, 255, 0.5);
+}
+
+.lang-switch {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-switch button {
+  padding: 5px 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 0, 20, 0.9);
+  color: var(--text-soft);
+  font-size: 10px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.lang-switch button:hover {
+  border-color: var(--accent-magenta);
+  color: var(--accent-magenta);
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.6);
+}
+
+/* ---------- Ticker ---------- */
+
+.ticker {
+  padding: 6px 12px;
+  background: linear-gradient(90deg, #160028, #0b0016, #160028);
+  border-radius: var(--radius-panel);
+  border-color: rgba(255, 0, 255, 0.35);
+}
+
+.ticker marquee {
+  font-size: 11px;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 10px rgba(53, 224, 255, 0.8);
+}
+
+/* ---------- Markets ---------- */
+
+.markets h2,
+.chart h2,
+.orders h2,
+.signals h2,
+.news h2 {
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: var(--accent-magenta);
+  text-shadow: 0 0 10px rgba(255, 77, 240, 0.9);
+}
+
+.markets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.market-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.market-tabs button {
+  padding: 5px 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 0, 20, 0.9);
+  color: var(--text-soft);
+  font-size: 10px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.market-tabs button:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-magenta);
+  box-shadow: 0 0 12px rgba(122, 0, 255, 0.7);
+}
+
+.market-list {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.market-item {
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: radial-gradient(circle at left, rgba(255, 77, 240, 0.18), rgba(5, 0, 11, 0.9));
+  border: 1px solid rgba(255, 0, 255, 0.25);
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-main);
+}
+
+/* ---------- Chart ---------- */
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#tv-chart {
+  width: 100%;
+  height: 320px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 0, 255, 0.35);
+  box-shadow: 0 0 18px rgba(255, 0, 255, 0.4);
+  overflow: hidden;
+}
+
+/* ---------- Right Panel ---------- */
+
+#right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.orders,
+.signals {
+  font-size: 11px;
+}
+
+.order-item,
+.signal-item {
+  padding: 7px 9px;
+  border-radius: 8px;
+  background: rgba(10, 0, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-soft);
+}
+
+/* ---------- News ---------- */
+
+.news {
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+.news-item {
+  margin-top: 4px;
+  padding: 7px 9px;
+  border-radius: 8px;
+  background: radial-gradient(circle at left, rgba(53, 224, 255, 0.16), rgba(5, 0, 11, 0.95));
+  border: 1px solid rgba(53, 224, 255, 0.4);
+  color: var(--text-main);
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  margin-top: 4px;
+  text-align: center;
+  font-size: 10px;
+  color: var(--text-muted);
+  background: linear-gradient(90deg, #0b0016, #160028, #0b0016);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+
+  #right-panel {
+    flex-direction: row;
+  }
+
+  #right-panel > .panel {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .header nav {
+    display: none;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #right-panel {
+    flex-direction: column;
+  }
+}
